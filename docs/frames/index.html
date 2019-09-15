@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Frames & Applying Styles</title>
+    <link href="../main.css" rel="stylesheet">
+</head>
+<body id="preview">
+	<h1 class="code-line" data-line-end="1" data-line-start="0"><a id="Frames_and_applying_styles_0"></a><code>Frames</code> and applying styles:</h1>
+	<p class="has-line-data" data-line-end="2" data-line-start="1">Think of <code>frames</code> as <strong>permanent</strong> CSS classes, but in JS-object notation. Instead of working with DOM <code>classList</code>, use frames to speed up the process:</p>
+	<h2 class="code-line" data-line-end="4" data-line-start="3"><a id="Example_3"></a><strong>Example</strong></h2>
+	<h5 class="code-line" data-line-end="5" data-line-start="4"><a id="Lets_say_we_have_a_frame_called_newEffect_and_a_CSS_class_called_neweffect_4"></a>Let’s say we have a <code>frame</code> called <code>newEffect</code> and a CSS class called <code>new-effect</code></h5>
+	<p class="has-line-data" data-line-end="6" data-line-start="5"><strong>Before:</strong> Plain JS with the CSS class:</p>
+	<pre><code class="language-css" data-line-end="12" data-line-start="7"><span class="hljs-class">.new-effect</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> blue</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> white</span></span>;
+}</span>
+</code></pre>
+	<pre><code class="language-js" data-line-end="16" data-line-start="13"><span class="hljs-keyword">let</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#test"</span>);
+element.classList.add(<span class="hljs-string">"new-effect"</span>);
+</code></pre>
+	<p class="has-line-data" data-line-end="17" data-line-start="16"><strong>After:</strong> KeyframerJS with frames:</p>
+	<pre><code class="language-js" data-line-end="24" data-line-start="18">keyframer.createFrame(<span class="hljs-string">"newEffect"</span>, {
+    background: <span class="hljs-string">"blue"</span>,
+    color: <span class="hljs-string">"white"</span>
+});
+keyframer.setStyles(<span class="hljs-string">"#test"</span>, keyframer.getFrame(<span class="hljs-string">"newEffect"</span>))
+</code></pre>
+	<h2 class="code-line" data-line-end="25" data-line-start="24"><a id="There_are_2_types_of_frames_24"></a>There are 2 types of frames:</h2>
+	<ol>
+		<li class="has-line-data" data-line-end="26" data-line-start="25"><strong>Reusable Frames</strong> - frames created and stored as properties in the <code>keyframer.frames</code> object (either with an object reference or the <code>createFrame</code> function).</li>
+		<li class="has-line-data" data-line-end="28" data-line-start="26"><strong>Single-Use Frames</strong> - objects passed as parameters to only be used once (e.g. <code>{ background: &quot;blue&quot;, color: &quot;white&quot; }</code>).</li>
+	</ol>
+	<h5 class="code-line" data-line-end="29" data-line-start="28"><a id="When_to_use_which_28"></a>When to use which?</h5>
+	<p class="has-line-data" data-line-end="31" data-line-start="29">Use a <strong>reusable frame</strong> when it’s likely you’ll use the frame more than one time.<br>
+	Use a <strong>single-use</strong> frame when you think you’ll only use the frame once.</p>
+	<h2 class="code-line" data-line-end="33" data-line-start="32"><a id="Creating_Frames_32"></a>Creating Frames:</h2>
+	<p class="has-line-data" data-line-end="34" data-line-start="33"><strong>Single-use frames</strong> are just objects, so there isn’t much to explain there.</p>
+	<p class="has-line-data" data-line-end="36" data-line-start="35"><strong>Reusable Frames</strong> can be created 2 ways, the function call or the object reference:</p>
+	<pre><code class="language-js" data-line-end="43" data-line-start="37"><span class="hljs-comment">// Function Call (creating a frame called 'newEffect'): </span>
+keyframer.createFrame(<span class="hljs-string">"newEffect"</span>, {
+    background: <span class="hljs-string">"blue"</span>,
+    color: <span class="hljs-string">"white"</span>
+});
+</code></pre>
+	<pre><code class="language-js" data-line-end="50" data-line-start="44"><span class="hljs-comment">// Object Reference (creating a frame called 'newEffect'):</span>
+keyframer.frames[<span class="hljs-string">"newEffect"</span>] = {
+    background: <span class="hljs-string">"blue"</span>,
+    color: <span class="hljs-string">"white"</span>
+};
+</code></pre>
+	<h2 class="code-line" data-line-end="51" data-line-start="50"><a id="Applying_Frame_Styles_50"></a>Applying Frame Styles:</h2>
+	<p class="has-line-data" data-line-end="52" data-line-start="51">The style properties contained in a frame are apllied to a DOM element by passing it in the <code>keyframer.setStyles</code> function:</p>
+	<pre><code class="language-js" data-line-end="61" data-line-start="53"><span class="hljs-comment">// Applying A Reusable Frame To An Element With An ID of header:</span>
+keyframer.createFrame(<span class="hljs-string">"newEffect"</span>, {
+    background: <span class="hljs-string">"blue"</span>,
+    color: <span class="hljs-string">"white"</span>
+});
+
+keyframer.setStyles(<span class="hljs-string">"#header"</span>, keyframer.getFrame(<span class="hljs-string">"newEffect"</span>));
+</code></pre>
+	<pre><code class="language-js" data-line-end="65" data-line-start="62"><span class="hljs-comment">// Applying A Single-Use Frame To An Element With An ID of header:</span>
+keyframer.setStyles(<span class="hljs-string">"#header"</span>, { background: <span class="hljs-string">"blue"</span>, color: <span class="hljs-string">"white"</span> });
+</code></pre>
+	<h2 class="code-line" data-line-end="66" data-line-start="65"><a id="Oh_and_before_you_go_65"></a>Oh, and before you go!</h2>
+	<ul>
+		<li class="has-line-data" data-line-end="69" data-line-start="66">The style attributes used in frames look a bit different than in CSS:
+			<ul>
+				<li class="has-line-data" data-line-end="68" data-line-start="67">They are written in <code>camelCase</code>, not <code>how-they-look</code> in CSS.</li>
+				<li class="has-line-data" data-line-end="69" data-line-start="68"><strong>Example</strong>: When creating a frame, you’d write <code>marginTop</code>, not <code>margin-top</code>.</li>
+			</ul>
+		</li>
+	</ul>
+	<hr>
+    <h1 class="code-line" data-line-end="71" data-line-start="70"><a id="Have_Fun_70"></a>Have Fun!</h1>
+    <hr>
+    <br><br><br>
+</body>
+</html>
