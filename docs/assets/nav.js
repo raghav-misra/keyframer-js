@@ -3,7 +3,6 @@ menuOpen = false;
 function openMenu(){
     if(menuOpen) return;
     menuOpen = true;
-    document.querySelector("#closeNav").disabled = false;
     document.querySelector("#title").style.display = "none";
     document.querySelector("#title").disabled = true;
     keyframer.createCSSTransition("header", "all 0.5s ease-in-out", {
@@ -14,7 +13,11 @@ function openMenu(){
             height: "300px",
             opacity: "1"
         });
-    });  
+    }); 
+    setTimeout(()=>{
+        document.querySelector("#closeNav").disabled = false;
+        document.querySelector("#nav").style.overflow = "auto";
+    }, 1000) 
 };
 
 function closeMenu(){
@@ -26,7 +29,8 @@ function closeMenu(){
     }, ()=>{
         keyframer.createCSSTransition("#nav", "all 1s ease-in-out", {
             height: "0px",
-            opacity: "0"
+            opacity: "0",
+            overflow: "hidden"
         });
     });
     setTimeout(()=>{

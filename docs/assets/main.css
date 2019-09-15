@@ -21,7 +21,7 @@ hr.white{
 #nav{
 	opacity: 0;
 	height: 0;
-	overflow-y: auto;
+	overflow-y: hidden;
 	position: relative;
 }
 
@@ -70,9 +70,25 @@ hr.white{
 	color: rgb(245, 76, 76);
 }
 
+#nav hr{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 #nav h1:first-child{
 	color: white;
 	text-align: center;
+}
+
+#nav::-webkit-scrollbar{
+	background: #242a30;
+	width: 10px;
+	border-radius: 50px;
+}
+
+#nav::-webkit-scrollbar-thumb{
+	background: white;
+	border-radius: 50px;
 }
 
 header{
@@ -93,9 +109,9 @@ header #title{
 }
 
 header #title::after{
-	content: 'menu';
+	content: 'menu_book';
+	color: #003366;
 	margin-left: 10px;
-	color: #242a30;
 	font-family: 'Material Icons';
 	font-weight: normal;
 	font-style: normal;
