@@ -24,7 +24,7 @@ keyframer.setStyles("#test", keyframer.getFrame("newEffect"))
 ```
 ## There are 2 types of frames:
 1.  **Reusable Frames** - frames created and stored as properties in the `keyframer.frames` object (either with an object reference or the `createFrame` function).
-2. **Single-Use Frames** - objects passed as parameters to only be used once (e.g. `{ background: "blue", color: "white" }`).
+2. **Single-Use Frames** - objects passed as parameters to only be used once (e.g. `{background: "blue", color: "white"}`).
 
 ##### When to use which?
 Use a **reusable frame** when it's likely you'll use the frame more than one time.
