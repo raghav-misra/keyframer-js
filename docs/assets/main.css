@@ -19,9 +19,47 @@ hr.white{
 }
 
 #nav{
+	opacity: 0;
 	height: 0;
 	overflow-y: auto;
 	position: relative;
+}
+
+.links-container{
+	padding: 10px;
+	text-align: center;
+}
+
+.links-container .link{
+	text-align: center;
+	display: inline-block;
+	margin: 20px;
+}
+
+.links-container .link a{
+	color: white;
+	padding: 10px;
+	border: 2px solid white;
+	font-size: 20px;
+	border-radius: 10px;
+	transition: all .25s ease-in-out;
+	background: transparent;
+}
+
+.links-container .link.current a:not(disabled){
+	background: #003366;
+	color: white;
+	border-color: #003366;
+}
+
+.links-container .link a[disabled]{
+	color: rgb(245, 76, 76);
+	border-color: rgb(245, 76, 76);
+}
+
+.links-container .link:not(.current) a:not([disabled]):hover{
+	background: white;
+	color: #242a30;
 }
 
 #closeNav{
@@ -42,6 +80,8 @@ header{
 	padding: 10px;
 	border-radius: 50px;
 	margin: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
 	border: 5px #242a30 solid;
 	transition: background 0.5s ease-in-out; 
 }

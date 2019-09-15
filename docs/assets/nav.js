@@ -10,8 +10,9 @@ function openMenu(){
         background: "#242a30",
         borderRadius: "0"
     }, ()=>{
-        keyframer.createCSSTransition("#nav", " height 1s ease-in-out", {
-            height: "300px"
+        keyframer.createCSSTransition("#nav", "all 1s ease-in-out", {
+            height: "300px",
+            opacity: "1"
         });
     });  
 };
@@ -23,8 +24,9 @@ function closeMenu(){
         background: "white",
         borderRadius: "50px"
     }, ()=>{
-        keyframer.createCSSTransition("#nav", " height 1s ease-in-out", {
+        keyframer.createCSSTransition("#nav", "all 1s ease-in-out", {
             height: "0px",
+            opacity: "0"
         });
     });
     setTimeout(()=>{
