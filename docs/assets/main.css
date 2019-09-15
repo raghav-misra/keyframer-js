@@ -3,12 +3,63 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap');
 
 *{
+	color: #242a30;
     font-family: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-code, pre, code span, pre *, kbd, kbd *{
-    font-family: monospace;
-    font-size: 14px;
+hr{
+	border: none;
+	border: 2px solid #242a30;
+	border-radius: 50px;
+	height: 0;
+}
+
+hr.white{
+	border-color: white;
+}
+
+#nav{
+	height: 0;
+	overflow-y: auto;
+	position: relative;
+}
+
+#closeNav{
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	color: rgb(245, 76, 76);
+}
+
+#nav h1:first-child{
+	color: white;
+	text-align: center;
+}
+
+header{
+	min-height: 86px;
+	padding: 10px;
+	border-radius: 50px;
+	margin: 20px;
+	border: 5px #242a30 solid;
+	transition: background 0.5s ease-in-out; 
+}
+
+header #title{
+	color: #242a30;
+	text-align: center;
+	transition: inherit;
+}
+
+pre code, pre code *{
+	font-family: monospace;
+	font-size: 14px !important;
+}
+
+
+kbd, code{
+	font-family: monospace;
 }
 
 code {

@@ -3,10 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<title>Frames & Applying Styles</title>
-    <link href="../main.css" rel="stylesheet">
+    <link href="../assets/main.css" rel="stylesheet">
 </head>
 <body id="preview">
+	<header id="header" title="Navigation">
+		<h1 id="title">KeyframerJS Docs</h1>
+		<div id="nav">
+			<h1>Navigation | <button id="closeNav">Close</button></h1>
+			<hr class="white">
+			<div class="links-container"></div>
+		</div>
+	</header>
 	<h1 class="code-line" data-line-end="1" data-line-start="0"><a id="Frames_and_applying_styles_0"></a><code>Frames</code> and applying styles:</h1>
+	<hr>
 	<p class="has-line-data" data-line-end="2" data-line-start="1">Think of <code>frames</code> as <strong>permanent</strong> CSS classes, but in JS-object notation. Instead of working with DOM <code>classList</code>, use frames to speed up the process:</p>
 	<h2 class="code-line" data-line-end="4" data-line-start="3"><a id="Example_3"></a><strong>Example</strong></h2>
 	<h5 class="code-line" data-line-end="5" data-line-start="4"><a id="Lets_say_we_have_a_frame_called_newEffect_and_a_CSS_class_called_neweffect_4"></a>Let’s say we have a <code>frame</code> called <code>newEffect</code> and a CSS class called <code>new-effect</code></h5>
@@ -73,7 +82,8 @@ keyframer.setStyles(<span class="hljs-string">"#header"</span>, { background: <s
 	</ul>
 	<hr>
     <h1 class="code-line" data-line-end="71" data-line-start="70"><a id="Have_Fun_70"></a>Have Fun!</h1>
-    <hr>
-    <br><br><br>
+	<br><br><br>
+	<script src="../../lib/keyframer.latest.js"></script>
+	<script src="../assets/nav.js"></script>
 </body>
 </html>
