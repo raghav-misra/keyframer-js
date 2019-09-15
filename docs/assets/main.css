@@ -1351,12 +1351,13 @@ h6 {
 }
 a {
 	cursor: pointer;
-	color: #35D7BB;
-	text-decoration: none
+	color: #003366;
+	text-decoration: none;
+	border: none;
+	border-bottom: 2px solid transparent;
 }
 a:hover, a:focus {
-	border-bottom-color: #35D7BB;
-	color: #dff9f4
+	border-bottom-color: #003366;
 }
 img {
 	height: auto;
