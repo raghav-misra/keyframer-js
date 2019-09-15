@@ -1262,7 +1262,6 @@ th, td {
 	padding: 12px
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 	font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 	font-style: normal;
@@ -1580,7 +1579,6 @@ img {
 .splashscreen p {
 	font-size: 1.25rem;
 	padding-top: .56251rem;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	text-align: center;
 	max-width: 500px;
@@ -1633,7 +1631,6 @@ img {
 	margin-bottom: .89999rem;
 	padding-top: .10001rem;
 	font-weight: 400;
-	font-family: "Ubuntu Mono", Monaco;
 	color: #373D49;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -1724,7 +1721,6 @@ img {
 .menu a {
 	border: 0;
 	color: #A0AABF;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	outline: none;
 	text-transform: uppercase
 }
@@ -1920,7 +1916,6 @@ img {
 }
 .settings a {
 	font-size: 1.25rem;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	line-height: 28px;
@@ -2031,7 +2026,7 @@ img {
 	margin-bottom: .77999rem;
 	padding-top: .22001rem;
 	font-weight: 500;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
 	color: #A0AABF;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -2052,7 +2047,7 @@ img {
 	width: 100%;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
 	font-size: 14px;
 	text-shadow: 0 1px 0 #1b8b77;
 	padding: 16px 24px;
@@ -2110,7 +2105,7 @@ img {
 }
 .btn--delete-modal {
 	display: inline;
-	width: auto
+
 }
 .overlay {
 	position: absolute;
@@ -2180,7 +2175,7 @@ img {
 	border-radius: 3px;
 	box-shadow: 0 2px 5px 0 #2C3B59;
 	color: #fff;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
 	font-weight: 400;
 	padding: 2rem
 }
@@ -2281,7 +2276,7 @@ img {
 	background: #666E7F;
 	border-radius: 3px;
 	color: #fff;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
 	font-weight: 400;
 	overflow: hidden;
 	padding: 1rem 2rem .5rem;
