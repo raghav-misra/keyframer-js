@@ -13,12 +13,11 @@ KeyframerJS simplifies CSS in JavaScript, so you don't have to.
   - Keyframer supports **every** DOM event there is, including special support for key-related events.
 * JS Animations are on the rise, but they are time consuming to make. Let KeyframerJS help you! **(Coming Soon)*
 
-# Roadmap/To-Do:
+## Roadmap/To-Do:
 * Add support for JS Animations.
 * Finish documentation.
 * Finish example.
-***
-# Useful Links:
+## Useful Links:
 ### [Github Repository](https://github.com/raghav-misra/keyframer-js)
 ### [Documentation](https://keyframer.obliviontech.dev/docs)
 ### [Demo/Example](https://keyframer.obliviontech.dev/demo)
