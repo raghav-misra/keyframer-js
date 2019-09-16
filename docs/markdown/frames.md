@@ -11,7 +11,7 @@ Think of `frames` as **permanent** CSS classes, but in JS-object notation. Inste
 }
 ```
 ```js
-let element = document.getElementById("#test");
+let element = document.getElementById("test");
 element.classList.add("new-effect");
 ```
 **After:** KeyframerJS with frames:
@@ -69,8 +69,5 @@ keyframer.setStyles("#header", { background: "blue", color: "white" });
     - **Example**: When creating a frame, you'd write `marginTop`, not `margin-top`.
 ---
 # Have Fun!
-## [`|__Frame_&_Applying Styles__|`]() 
-## [`|__Animations_&_Transitions_|`]() 
-## [`|__Other_Advanced_Features__|`]()
 
 

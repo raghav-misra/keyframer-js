@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>KeyframerJS Docs - CSS Animations</title>
+    <link href="../../assets/main.css" rel="stylesheet">
+</head>
+<body id="preview">
+	<header id="header">
+		<h1 id="title" title="Navigation">KeyframerJS Docs</h1>
+		<div id="nav">
+			<h1>Navigation | <button id="closeNav">Close</button></h1>
+			<hr class="white">
+			<div class="links-container">
+				<div class="link"><a href="../">Docs Home</a></div>
+				<div class="link"><a href="../setup/">Keyframer Setup</a></div>
+				<div class="link"><a href="../frames">Frames & Applying Styles</a></div>
+				<div class="link"><a href="../css-transitions">CSS Transitions</a></div>
+				<div class="current link"><a href="#">CSS Animations</a></div>
+				<div class="link"><a href="../js-animations" disabled>JS Animations (Coming Soon)</a></div>
+			</div>
+		</div>
+	</header>
+	<h1 class="code-line" data-line-end="1" data-line-start="0"><a id="Controlling_CSS_Animations_0"></a>Controlling CSS Animations:</h1>
+	<h2 class="code-line" data-line-end="2" data-line-start="1"><a id="Example_1"></a><strong>Example:</strong></h2>
+	<h5 class="code-line" data-line-end="3" data-line-start="2"><a id="Lets_say_we_have_a_CSS_animation_called_fade_and_we_want_to_apply_it_to_btn_After_the_animation_is_finished_we_remove_the_animation_then_hide_btn_2"></a>Let’s say we have a CSS animation called <code>fade</code> and we want to apply it to <code>#btn</code>. After the animation is finished, we remove the animation, then hide <code>#btn</code>.</h5>
+	<p class="has-line-data" data-line-end="4" data-line-start="3"><strong>Before:</strong> Vanilla JS + CSS:</p>
+	<pre><code class="language-css" data-line-end="10" data-line-start="5"><span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> fade</span>{
+        <span class="hljs-tag">from</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+        <span class="hljs-tag">to</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>; }</span>
+    }
+    </code></pre>
+	<pre><code class="language-js" data-line-end="18" data-line-start="11"><span class="hljs-keyword">let</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"btn"</span>);
+    button.style.animation = <span class="hljs-string">"fade 0.5s ease"</span>;
+    setTimeout(() =&gt; {
+        button.style.animation = <span class="hljs-string">"none"</span>;
+        button.style.display = <span class="hljs-string">"none"</span>;
+    }, <span class="hljs-number">500</span>);
+    </code></pre>
+	<p class="has-line-data" data-line-end="19" data-line-start="18"><strong>After:</strong> KeyframerJS + CSS:</p>
+	<pre><code class="language-css" data-line-end="25" data-line-start="20"><span class="hljs-at_rule">@<span class="hljs-keyword">keyframes</span> fade</span>{
+        <span class="hljs-tag">from</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; }</span>
+        <span class="hljs-tag">to</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>; }</span>
+    }
+    </code></pre>
+	<pre><code class="language-js" data-line-end="30" data-line-start="26">keyframer.createCSSAnimation(<span class="hljs-string">"#btn"</span>, <span class="hljs-string">"fade 0.5s ease"</span>, <span class="hljs-number">500</span>, (element) =&gt; {
+        element.style.display = <span class="hljs-string">"none"</span>;
+    });
+    </code></pre>
+	<hr>
+	<h2 class="code-line" data-line-end="33" data-line-start="32"><a id="Animating_a_DOM_element_programmatically_32"></a>Animating a DOM element programmatically:</h2>
+	<h5 class="has-line-data" data-line-end="34" data-line-start="33"><code>keyframer.createCSSAnimation(elementQuery, animationData, removeTimeoutMS, callback)</code></h5>
+	<h5 class="code-line" data-line-end="36" data-line-start="35"><a id="Parameters_35"></a>Parameters:</h5>
+	<ul>
+		<li class="has-line-data" data-line-end="37" data-line-start="36"><code>elementQuery</code> = the querySelector for the element you want to animate. (e.g. <code>&quot;#id&quot;, &quot;.class&quot;, &quot;h1&quot;, &quot;[data-attr]&quot;</code>)</li>
+		<li class="has-line-data" data-line-end="38" data-line-start="37"><code>animationData</code> = animation details (name, easing, length, etc.) passed as a string (<code>animation-name 0.5s ease-in-out</code>)</li>
+		<li class="has-line-data" data-line-end="39" data-line-start="38"><code>removeTimeoutMS</code> (optional) = the amount of millseconds after which the element’s animation property is set to <code>none</code></li>
+		<li class="has-line-data" data-line-end="40" data-line-start="39"><code>callback</code> (optional, requires <code>removeTimeoutMS</code> to be set) = the function called after the time duration <code>removeTimeoutMS</code> has passed, has 1 parameter (the animated element)</li>
+	</ul>
+	<hr>
+	<h2 class="code-line" data-line-end="43" data-line-start="42"><a id="Creating_an_event_handler_to_animate_a_DOM_element_42"></a>Creating an event handler to animate a DOM element:</h2>
+	<h5 class="has-line-data" data-line-end="44" data-line-start="43"><code>keyframer.createCSSAnimationOn(keyEvent, elementQuery, animationData, removeTimeoutMS, callback, eventReceiver)</code></h5>
+	<br><p>This function triggers animations when an event is fired.</p>
+	<h5 class="code-line" data-line-end="46" data-line-start="45"><a id="Parameters_45"></a>Parameters:</h5>
+	<ul>
+		<li class="has-line-data" data-line-end="47" data-line-start="46"><code>event</code> = the DOM event (e.g <code>&quot;click&quot;</code> or <code>&quot;mouseover&quot;</code>) after which the event is animated.</li>
+		<li class="has-line-data" data-line-end="48" data-line-start="47"><code>elementQuery</code> = the querySelector for the element you want to animate. (e.g. <code>&quot;#id&quot;</code>, <code>&quot;.class&quot;</code>, <code>&quot;h1&quot;</code>, <code>&quot;[data-attr]&quot;</code>)</li>
+		<li class="has-line-data" data-line-end="49" data-line-start="48"><code>animationData</code> = animation details (name, easing, length, etc.) passed as a string (<code>animation-name 0.5s ease-in-out</code>)</li>
+		<li class="has-line-data" data-line-end="50" data-line-start="49"><code>removeTimeoutMS</code> (optional) = the amount of millseconds after which the element’s animation property is set to <code>none</code></li>
+		<li class="has-line-data" data-line-end="51" data-line-start="50"><code>callback</code> (optional, requires <code>removeTimeoutMS</code> to be set) = the function called after the time duration <code>removeTimeoutMS</code> has passed, has 1 parameter (the animated element)</li>
+		<li class="has-line-data" data-line-end="52" data-line-start="51"><code>eventReceiver</code> (optional) the querySelector for the element that receives the event.</li>
+	</ul>
+	<hr>
+	<h2 class="code-line" data-line-end="55" data-line-start="54"><a id="Creating_an_keyevent_handler_to_animate_a_DOM_element_54"></a>Creating an <strong>key</strong>-event handler to animate a DOM element:</h2>
+	<h5 class="has-line-data" data-line-end="57" data-line-start="55"><code>keyframer.createCSSAnimationOnKey(keyEvent, elementQuery, animationData, allowedKeys, removeTimeoutMS, callback, eventReceiver)</code></h5>
+	<br><p>This specific function has special support for the DOM events <code>keyup</code>, <code>keypress</code>, and <code>keydown</code>.</p>
+	<h5 class="code-line" data-line-end="59" data-line-start="58"><a id="Parameters_58"></a>Parameters:</h5>
+	<ul>
+		<li class="has-line-data" data-line-end="60" data-line-start="59"><code>keyEvent</code> = the DOM event (<code>&quot;press&quot;</code>, <code>&quot;up&quot;</code>, or <code>&quot;down&quot;</code>) after which the event is animated.</li>
+		<li class="has-line-data" data-line-end="61" data-line-start="60"><code>elementQuery</code> = the querySelector for the element you want to animate. (e.g. <code>&quot;#id&quot;, &quot;.class&quot;, &quot;h1&quot;, &quot;[data-attr]&quot;</code>)</li>
+		<li class="has-line-data" data-line-end="62" data-line-start="61"><code>animationData</code> = animation details (name, easing, length, etc.) passed as a string (<code>animation-name 0.5s ease-in-out</code>)</li>
+		<li class="has-line-data" data-line-start="62" data-line-end="63"><code>allowedKeys</code> = list of allowed keys that trigger the animation. (e.g. if we want the keys <strong>A</strong> and <strong>B</strong> to trigger the animation, we would pass <code>[&quot;KeyA&quot;,&quot;KeyB&quot;]</code>)</li>
+		<li class="has-line-data" data-line-end="63" data-line-start="62"><code>removeTimeoutMS</code> (optional) = the amount of millseconds after which the element’s animation property is set to <code>none</code></li>
+		<li class="has-line-data" data-line-end="64" data-line-start="63"><code>callback</code> (optional, requires <code>removeTimeoutMS</code> to be set) = the function called after the time duration <code>removeTimeoutMS</code> has passed, has 1 parameter (the animated element)</li>
+		<li class="has-line-data" data-line-end="65" data-line-start="64"><code>eventReceiver</code> (optional) the querySelector for the element that receives the event.</li>
+	</ul>
+	<hr>
+	<h1 class="code-line" data-line-end="68" data-line-start="67"><a id="Have_Fun_67"></a>Have Fun!</h1><br><br><br>
+	<script src="../../assets/keyframer.js"></script>
+	<script src="../../assets/nav.js"></script>
+</body>
+</html>

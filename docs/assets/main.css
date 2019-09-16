@@ -91,6 +91,10 @@ hr.white{
 	border-radius: 50px;
 }
 
+[disabled]{
+	pointer-events: none;
+}
+
 header{
 	min-height: 86px;
 	padding: 10px;
@@ -108,7 +112,7 @@ header #title{
 	transition: inherit;
 }
 
-header #title::after{
+header #title::after, header #title::before{
 	content: 'menu_book';
 	color: #003366;
 	margin-left: 10px;
@@ -125,17 +129,16 @@ header #title::after{
 	word-wrap: normal;
 	white-space: nowrap;
 	direction: ltr;
-
-	/* Support for all WebKit browsers. */
 	-webkit-font-smoothing: antialiased;
-	/* Support for Safari and Chrome. */
 	text-rendering: optimizeLegibility;
-
-	/* Support for Firefox. */
 	-moz-osx-font-smoothing: grayscale;
-
-	/* Support for IE. */
 	font-feature-settings: 'liga';
+}
+
+header #title::before {
+	content: 'menu';
+	margin: 0;
+	margin-right: 10px;
 }
 
 pre code, pre code *{
@@ -144,8 +147,12 @@ pre code, pre code *{
 }
 
 
-kbd, code{
+kbd, code, pre{
 	font-family: monospace;
+}
+
+p code, li code{
+	font-weight: bold;
 }
 
 code {

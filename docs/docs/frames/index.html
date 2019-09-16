@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>KeyframerJS Docs - Frames</title>
-    <link href="../assets/main.css" rel="stylesheet">
+    <link href="../../assets/main.css" rel="stylesheet">
 </head>
 <body id="preview">
-	<header id="header" title="Navigation">
-		<h1 id="title">KeyframerJS Docs</h1>
+	<header id="header">
+		<h1 id="title" title="Navigation">KeyframerJS Docs</h1>
 		<div id="nav">
 			<h1>Navigation | <button id="closeNav">Close</button></h1>
 			<hr class="white">
@@ -15,7 +15,8 @@
 				<div class="link"><a href="../">Docs Home</a></div>
 				<div class="link"><a href="../setup/">Keyframer Setup</a></div>
 				<div class="link current"><a href="#">Frames & Applying Styles</a></div>
-				<div class="link"><a href="../css-transitions">CSS Animations/Transitions</a></div>
+				<div class="link"><a href="../css-transitions">CSS Transitions</a></div>
+				<div class="link"><a href="../css-animations">CSS Animations</a></div>
 				<div class="link"><a href="../js-animations" disabled>JS Animations (Coming Soon)</a></div>
 			</div>
 		</div>
@@ -31,7 +32,7 @@
     <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> white</span></span>;
 }</span>
 </code></pre>
-	<pre><code class="language-js" data-line-end="16" data-line-start="13"><span class="hljs-keyword">let</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"#test"</span>);
+	<pre><code class="language-js" data-line-end="16" data-line-start="13"><span class="hljs-keyword">let</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"test"</span>);
 element.classList.add(<span class="hljs-string">"new-effect"</span>);
 </code></pre>
 	<p class="has-line-data" data-line-end="17" data-line-start="16"><strong>After:</strong> KeyframerJS with frames:</p>
@@ -89,7 +90,7 @@ keyframer.setStyles(<span class="hljs-string">"#header"</span>, { background: <s
 	<hr>
     <h1 class="code-line" data-line-end="71" data-line-start="70"><a id="Have_Fun_70"></a>Have Fun!</h1>
 	<br><br><br>
-	<script src="../assets/keyframer.js"></script>
-	<script src="../assets/nav.js"></script>
+	<script src="../../assets/keyframer.js"></script>
+	<script src="../../assets/nav.js"></script>
 </body>
 </html>
